@@ -31,7 +31,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap', '~> 5.0.1'
 gem 'font-awesome-rails'
 
-# Money managing
+# Money managing - https://github.com/RubyMoney/money-rails
 gem 'money-rails'
 
 # Stripe
