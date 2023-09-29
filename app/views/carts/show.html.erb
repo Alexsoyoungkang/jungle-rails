@@ -6,6 +6,7 @@
   <% # .empty? checks if the array is empty or not. returns true if it's empty %>
   <% if enhanced_cart.empty? %>
     <p> 🛒🛒 Your cart empty 🛒🛒</p>
+    <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
   <% else %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
