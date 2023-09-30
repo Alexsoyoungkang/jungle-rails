@@ -8,6 +8,30 @@
     <h4>Thank you for your order!</h4>
   </div>
 
+  <table>
+  <thead>
+    <tr>
+    <th colspan="2">Product </th>
+    <th> Quantity</th>
+    <th> Price </th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @order.line_items.each do |item| %>
+    <%= render 'line_item', product: item.product, quantity: item.quantity.to_i %>
+  <% end %>
+  </tbody>
+  <%# *****comment ^^^ render 'line_item' : render a partial view named '_line_item' %>
+  <%# *****comment ^^^ the association between the "Order" model and the "LineItem" model. "LineItem" belongs to "order", from order.rb file %>
+
+  <tr> 
+  <th> Order Total: </th>
+  <th> <%= humanized_money_with_symbol (@order.total_cents/100.00)  %></th>
+  </tr>
+  </table>
+  <p>Order confirmation has been sent to <%= @order.email %></p>
+
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
 </section>
