@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  monetize :price_cents, numericality: true
+  monetize :price_cents, numericality: true # custom validation rules to ensure that the price_cents attribute is numeric
   mount_uploader :image, ProductImageUploader
 
   belongs_to :category
